@@ -156,12 +156,6 @@ function mainPart() {
 
   runCommand "mariadb -e \"GRANT ALL PRIVILEGES ON \$( printf '\52' ).\$( printf '\52' ) TO '${dynuser}'@'localhost' IDENTIFIED BY '${dynamicUserPassword}' WITH GRANT OPTION;\""
 
-  runCommand "cd /home/"
-
-  runCommand "wget https://github.com/tabarra/txAdmin/releases/download/v4.5.0/monitor.zip "
-  
-  runCommand "unzip  monitor.zip"
-
   runCommand "printf '
 
   \n
@@ -233,11 +227,13 @@ function mainPart() {
 
 function txadmin() { 
 
-
   runCommand "cd /home/"
 
-  runCommand "./run.sh +set serverProfile dev_server +set txAdminPort 40120"
+  runCommand "wget https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/4478-469601d22046dcb305d06ba90cc54c93d6b77af8/fx.tar.xz"
+  
+  runCommand "tar monitor.zip"
 
+  runCommand "./run.sh +set serverProfile dev_server +set txAdminPort 40120"
 
 }
 
