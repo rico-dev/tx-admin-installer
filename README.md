@@ -4,14 +4,14 @@
 
 For help, suggestion and more join my [Discord](https://discord.gg/)
 
-This is just a simple to install Txadmin, PHPMyAdmin, Apache2 and MariaDB on Debian/Ubuntu based systems.
+With this Script can you install Txadmin, PHPMyAdmin, Apache2 and MariaDB on Linux based systems.
 
 To run the installer simply run the following command and follow the instructions
 
 ```
 bash <(curl -s https://raw.githubusercontent.com/rico-dev/tx-admin-installer/main/install.sh)
 ```
-
+Make sure you joined my [Discord](https://discord.gg/)
 ---
 
 | Ubuntu  System   | Version | Works
