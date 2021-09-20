@@ -233,6 +233,8 @@ function txadmin() {
   
   runCommand "tar -Jxvf fx.tar.xz"
 
+  databasedata
+
   runCommand "./run.sh +set serverProfile dev_server +set txAdminPort 40120"
 
 }
@@ -273,7 +275,7 @@ function selfTest() {
 }
 
 
-function output() {
+function databasedata() {
   clear
 
   echo "
@@ -304,5 +306,3 @@ mainPart
 selfTest
 
 txadmin
-
-output
