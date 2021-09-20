@@ -303,6 +303,6 @@ mainPart
 
 selfTest
 
-output
-
 txadmin
+
+output
