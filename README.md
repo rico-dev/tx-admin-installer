@@ -2,7 +2,7 @@
 
 # TxAdmin and PHPMyAdmin install Script
 
-For help, suggestion and more join my [Discord](https://discord.gg/)
+For help, suggestion and more join my [Discord](https://discord.gg/Yrx8gNTBhj)
 
 With this Script can you install Txadmin, PHPMyAdmin, Apache2 and MariaDB on Linux based systems.
 
@@ -11,7 +11,7 @@ To run the installer simply run the following command and follow the instruction
 ```
 bash <(curl -s https://raw.githubusercontent.com/rico-dev/tx-admin-installer/main/install.sh)
 ```
-Make sure you joined my [Discord](https://discord.gg/)
+Make sure you joined my [Discord](https://discord.gg/Yrx8gNTBhj)
 ---
 
 | Ubuntu  System   | Version | Works
