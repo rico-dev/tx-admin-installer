@@ -231,9 +231,9 @@ function txadmin() {
 
   runCommand "wget https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/4478-469601d22046dcb305d06ba90cc54c93d6b77af8/fx.tar.xz"
   
-  runCommand "tar -Jxvf monitor.zip"
+  runCommand "tar -Jxvf fx.tar.xz"
 
-  runCommand "screen -r ./run.sh +set serverProfile dev_server +set txAdminPort 40120"
+  runCommand "./run.sh +set serverProfile dev_server +set txAdminPort 40120"
 
 }
 
