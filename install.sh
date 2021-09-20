@@ -234,6 +234,8 @@ function txadmin() {
   runCommand "tar -Jxvf fx.tar.xz"
 
   databasedata
+  
+  set timeout 3
 
   runCommand "./run.sh +set serverProfile dev_server +set txAdminPort 40120"
 
