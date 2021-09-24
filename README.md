@@ -1,17 +1,15 @@
 <p align="center"> <img src="https://komarev.com/ghpvc/?username=rico-dev" alt="yus" /> </p>
 
-# TxAdmin and PHPMyAdmin install Script
+# TxAdmin Installer with Database install script.
 
-For Help, Suggestion and more join my [Discord](https://discord.gg/Yrx8gNTBhj)
+For Help, Suggestion and more open a [Issue](https://github.com/rico-dev/tx-admin-installer/issues/new)
 
-With this Script can you install TxAdmin, PHPMyAdmin, Apache2 and MariaDB on Linux based systems.
-
-To run the Installer run the following command and follow the instructions
+Paste this in the Console.
 
 ```
 bash <(curl -s https://raw.githubusercontent.com/rico-dev/tx-admin-installer/main/install.sh)
+
 ```
-Make sure you joined my [Discord](https://discord.gg/Yrx8gNTBhj)
 ---
 
 | Ubuntu  System   | Version | Works
@@ -23,10 +21,7 @@ Make sure you joined my [Discord](https://discord.gg/Yrx8gNTBhj)
 | ---------------- | ------- | ------------------
 | Debian           | 10      | :white_check_mark:      
 
-I will test it soon on more Systems
-
-
 ## Credits
 
- - [GermanJag](https://github.com/GermanJag/) _(Have made the PHPMyAdmin Script)_
- - [TxAdmin](https://github.com/tabarra/txAdmin) _(TxAdmin Owner)_
+ - [GermanJag](https://github.com/GermanJag/) (Owner for the Database Install Script)
+ - [TxAdmin](https://github.com/tabarra/txAdmin) (TxAdmin Owner)
