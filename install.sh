@@ -32,7 +32,7 @@ datenbank() {
 
 
 install_options(){
-    output "Please select your installation option:"
+    echo -e  "Please select your installation option:"
     output "[1] Datenbank."
     output "[2] Install the panel ."
     output "[3] Install the wings ."
