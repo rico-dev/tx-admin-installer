@@ -19,51 +19,134 @@ red='\033[0;31m'
 white='\033[0;37m'
 reset='\033[0;0m'
 
-status(){
-  clear
-  echo -e $green$@'...'$reset
-  sleep 1
-}
 
-runCommand(){
-    COMMAND=$1
-
-    if [[ ! -z "$2" ]]; then
-      status $2
-    fi
-
-    eval $COMMAND;
-    BASH_CODE=$?
-    if [ $BASH_CODE -ne 0 ]; then
-      echo -e "${red}An error occurred:${reset} ${white}${COMMAND}${reset}${red} returned${reset} ${white}${BASH_CODE}${reset}"
-      exit ${BASH_CODE}
-    fi
-}
-
-function datenbank() {
-  echo -e "${green}https://github.com/rico-dev/tx-admin-installer"
+datenbank() {
+  echo -e ${green}https://github.com/rico-dev/tx-admin-installer
   sleep 5
   clear
-  runCommand "bash <(curl -s https://raw.githubusercontent.com/GermanJag/PHPMyAdminInstaller/main/install.sh)" "Install Database"
+  bash <(curl -s https://raw.githubusercontent.com/GermanJag/PHPMyAdminInstaller/main/install.sh)
 
 }
 
 
-function txadmin() { 
 
-  echo -e "${green}This is you Database Data. Please save it, you have 15s"
+
+install_options(){
+    output "Please select your installation option:"
+    output "[1] Datenbank."
+    output "[2] Install the panel ."
+    output "[3] Install the wings ."
+    output "[4] Install the daemon ."
+    output "[5] Install the panel ."
+    output "[6] Install the panel."
+    output "[7] Install the standalone SFTP server."
+    output "[8] Upgrade (1.x) panel to"
+    output "[9] Upgrade (0.7.x) panel to ."
+    output "[10] Upgrade (0.7.x) panel to ."
+    output "[11] Upgrade (0.6.x) daemon to ."
+    output "[12] Migrating daemon to wings."
+    output "[13] Upgrade the panel to  and Migrate to wings"
+    output "[14] Upgrade the panel to  and daemon to "
+    output "[15] Upgrade the standalone SFTP server to (1.0.5)."
+    output "[16] Make Pterodactyl compatible with the mobile app (only use this after you have installed the panel - check out https://pterodactyl.cloud for more information)."
+    output "[17] Update mobile compatibility."
+    output "[18] Install or update to phpMyAdmin (only use this after you have installed the panel)."
+    output "[19] Install a standalone database host (only for use on daemon-only installations)."
+    output "[20] Change Pterodactyl theme (} Only)."
+    output "[21] Emergency MariaDB root password reset."
+    output "[22] Emergency database host information reset."
+    read -r choice
+    case $choice in
+        1 ) installoption=1
+            output "You have selected} panel installation only."
+            ;;
+        2 ) installoption=2
+            output "You have selected  panel installation only."
+            ;;
+        3 ) installoption=3
+            output "You have selected wings } installation only."
+            ;;
+        4 ) installoption=4
+            output "You have selected daemon  installation only."
+            ;;
+        5 ) installoption=5
+            output "You have selected L} panel and wings  installation."
+            ;;
+        6 ) installoption=6
+            output "You have selected GACY} panel and daemon installation."
+            ;;
+        7 ) installoption=7
+            output "You have selected to install the standalone SFTP server."
+            ;;
+        8 ) installoption=8
+            output "You have selected to upgrade the panel to L}."
+            ;;
+        9 ) installoption=9
+            output "You have selected to upgrade the panel to L}."
+            ;;
+        10 ) installoption=10
+            output "You have selected to upgrade the panel to _LEGACY}."
+            ;;
+        11 ) installoption=11
+            output "You have selected to upgrade the daemon to EMON_LEGACY}."
+            ;;
+        12 ) installoption=12
+            output "You have selected to migrate daemon $ to wingsNGS}."
+            ;;
+        13 ) installoption=13
+            output "You have selected to upgrade both the panel to L} and migrating to wings INGS}."
+            ;;
+        14 ) installoption=14
+            output "You have selected to upgrade both the panel to EL} and daemon toEGACY}."
+            ;;
+        15 ) installoption=15
+            output "You have selected to upgrade the standalone SFTP."
+            ;;
+        16 ) installoption=16
+            output "You have activated mobile app compatibility."
+            ;;
+        17 ) installoption=17
+            output "You have selected to update the mobile app compatibility."
+            ;;
+        18 ) installoption=18
+            output "You have selected to install or update phpMyAdmin }."
+            ;;
+        19 ) installoption=19
+            output "You have selected to install a Database host."
+            ;;
+        20 ) installoption=20
+            output "You have selected to change Pterodactyl  only."
+            ;;
+        21 ) installoption=21
+            output "You have selected MariaDB root password reset."
+            ;;
+        22 ) installoption=22
+            output "You have selected Database Host information reset."
+            ;;
+        * ) output "You did not enter a valid selection."
+            install_options
+    esac
+}
+
+
+
+
+
+txadmin() { 
+
+  echo -e ${green}This is you Database Data. Please save it, you have 15s
 
   sleep 15
 
-  runCommand "cd /home/" "Install TxAdmin please wait..."
+  cd /home/
 
-  runCommand "wget https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/4478-469601d22046dcb305d06ba90cc54c93d6b77af8/fx.tar.xz"
+  wget https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/4478-469601d22046dcb305d06ba90cc54c93d6b77af8/fx.tar.xz
   
-  runCommand "tar -Jxvf fx.tar.xz"
+  tar -Jxvf fx.tar.xz
 
   clear
 
-  runCommand "./run.sh +set serverProfile dev_server +set txAdminPort 40120"
+  ./run.sh +set serverProfile dev_server +set txAdminPort 40120
 
 }
 
@@ -73,6 +156,97 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
+install_options
+
 datenbank
 
 txadmin
+
+case $installoption in 
+        1) datenbank
+             ;;
+        2)   webserver_options
+             theme_options
+             repositories_setup_0.7.19
+             required_infos
+             firewall
+             setup_pterodactyl_0.7.19
+             broadcast
+             ;;
+        3)   repositories_setup
+             required_infos
+             firewall
+             ssl_certs
+             install_wings
+             broadcast
+	     broadcast_database
+             ;;
+        4)   repositories_setup_0.7.19
+             required_infos
+             firewall
+             ssl_certs
+             install_daemon
+             broadcast
+             ;;
+        5)   webserver_options
+             repositories_setup
+             required_infos
+             firewall
+             ssl_certs
+             setup_pterodactyl
+             install_wings
+             broadcast
+             ;;
+        6)   webserver_options
+             theme_options
+             repositories_setup_0.7.19
+             required_infos
+             firewall
+             setup_pterodactyl_0.7.19
+             install_daemon
+             broadcast
+             ;;
+        7)   install_standalone_sftp
+             ;;
+        8)   upgrade_pterodactyl
+             ;;
+        9)   upgrade_pterodactyl_1.0
+             ;;
+        10)  theme_options
+             upgrade_pterodactyl_0.7.19
+             theme
+             ;;
+        11)  upgrade_daemon
+             ;;
+        12)  migrate_wings
+             ;;
+        13)  upgrade_pterodactyl_1.0
+             migrate_wings
+             ;;
+        14)  theme_options
+             upgrade_pterodactyl_0.7.19
+             theme
+             upgrade_daemon
+             ;;
+        15)  upgrade_standalone_sftp
+             ;;
+        16)  install_mobile
+             ;;
+        17)  upgrade_mobile
+             ;;
+        18)  install_phpmyadmin
+             ;;
+        19)  repositories_setup
+             install_database
+             ;;
+        20)  theme_options
+             if [ "$themeoption" = "1" ]; then
+             	upgrade_pterodactyl_0.7.19
+             fi
+             theme
+            ;;
+        21) curl -sSL https://raw.githubusercontent.com/tommytran732/MariaDB-Root-Password-Reset/master/mariadb-104.sh | sudo bash
+            ;;
+        22) database_host_reset
+            ;;
+esac
