@@ -8,18 +8,17 @@ Paste this in the Console.
 
 ```
 bash <(curl -s https://raw.githubusercontent.com/rico-dev/tx-admin-installer/main/install.sh)
-
 ```
 ---
-
 | Ubuntu  System   | Version | Works
 | ---------------- | ------- | ------------------
 | Ubuntu           | 18.04   | :white_check_mark: 	        
 | Ubuntu           | 20.04   | :white_check_mark:
--------------------------------------------------  
+--- 
 | Debian System    | Version | Works    
 | ---------------- | ------- | ------------------
 | Debian           | 10      | :white_check_mark:      
+---
 
 ## Credits
 
