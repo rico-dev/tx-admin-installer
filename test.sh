@@ -26,7 +26,9 @@ runCommand(){
 }
 
 function datenbank() {
-
+  echo -e "${green}https://github.com/rico-dev/tx-admin-installer"
+  sleep 2
+  clear
   runCommand "bash <(curl -s https://raw.githubusercontent.com/GermanJag/PHPMyAdminInstaller/main/install.sh)" "Install Database"
 
 }
@@ -41,8 +43,6 @@ function txadmin() {
   runCommand "tar -Jxvf fx.tar.xz"
 
   clear
-  
-  set timeout 3
 
   runCommand "./run.sh +set serverProfile dev_server +set txAdminPort 40120"
 
