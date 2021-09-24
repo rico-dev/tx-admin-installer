@@ -53,7 +53,7 @@ function txadmin() {
 
   echo -e "${green}This is you Database Data. Please save it, you have 15s"
 
-  expect "If you done press enter"
+  sleep 15
 
   runCommand "cd /home/" "Install TxAdmin please wait..."
 
