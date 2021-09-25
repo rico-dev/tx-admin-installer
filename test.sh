@@ -30,8 +30,8 @@ datenbank() {
 
 tx_options(){
     echo -e  Please select your option:
-    echo -e  [1] TxAdmin(${TxAdmin}) with Database/PHPMyAdmin(${PHPMyAdmin})
-    echo -e  [2] Only TxAdmin.${TxAdmin}
+    echo -e  [1] TxAdmin ${TxAdmin} with Database/PHPMyAdmin ${PHPMyAdmin} 
+    echo -e  [2] Only TxAdmin. ${TxAdmin}
     read -r choice
     case $choice in
         1 ) txoption=1
