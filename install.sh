@@ -35,11 +35,9 @@ tx_options(){
     read -r choice
     case $choice in
         1 ) txoption=1
-           
             ;;
         2 ) txoption=2
-            
-            ;;
+            ;;   
         * ) 
             tx_options
     esac
@@ -50,7 +48,7 @@ tx_options(){
 
 
 txadmin() { 
-  echo -e ${green}https://github.com/rico-dev/tx-admin-installer
+  echo -e https://github.com/rico-dev/tx-admin-installer
  
   sleep 15
 
