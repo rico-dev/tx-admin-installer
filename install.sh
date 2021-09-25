@@ -33,12 +33,12 @@ tx_options(){
     read -r choice
     case $choice in
         1 ) txoption=1
-            output "You have selected} panel installation only."
+           
             ;;
         2 ) txoption=2
-            output "You have selected  panel installation only."
+            
             ;;
-        * ) output "You did not enter a valid selection."
+        * ) 
             tx_options
     esac
 }
