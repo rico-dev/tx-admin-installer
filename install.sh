@@ -58,7 +58,11 @@ txadmin() {
 
   cd /home/
 
-  wget https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/4478-469601d22046dcb305d06ba90cc54c93d6b77af8/fx.tar.xz
+  string=`wget -qO- https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/ | egrep -m 3 -o "............................................./*\/fx.tar.xz"`
+  
+	newstring=$( echo $string | cut -c113- )
+
+  wget https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/$newstring
   
   tar -Jxvf fx.tar.xz
 
