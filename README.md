@@ -23,4 +23,4 @@ bash <(curl -s https://raw.githubusercontent.com/rico-dev/tx-admin-installer/mai
 ## Credits
 
  - [GermanJag](https://github.com/GermanJag/) (Owner for the Database Install Script)
- - [TxAdmin](https://github.com/tabarra/txAdmin) (TxAdmin Owner)
+ - [tabarra](https://github.com/tabarra/txAdmin) (TxAdmin Owner)

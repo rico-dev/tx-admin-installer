@@ -29,6 +29,8 @@ datenbank() {
 
 
 tx_options(){
+    
+    echo -e This Script made by Rico M. (https://github.com/rico-dev) PHPMyAdmin install script by Julian G. (https://github.com/GermanJag)
     echo -e  Please select your option:
     echo -e  [1] TxAdmin ${TxAdmin} with Database/PHPMyAdmin ${PHPMyAdmin} 
     echo -e  [2] Only TxAdmin. ${TxAdmin}
