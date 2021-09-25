@@ -15,9 +15,11 @@
 
 #!/bin/bash
 
+TxAdmin=v4.5.0
+PHPMyAdmin=v5.1.1
+
+
 datenbank() {
-  echo -e ${green}https://github.com/rico-dev/tx-admin-installer
-  sleep 5
   clear
   bash <(curl -s https://raw.githubusercontent.com/GermanJag/PHPMyAdminInstaller/main/install.sh)
 
@@ -28,8 +30,8 @@ datenbank() {
 
 tx_options(){
     echo -e  Please select your option:
-    echo -e  [1] TxAdmin with Database/PHPMyAdmin
-    echo -e  [2] Only TxAdmin.
+    echo -e  [1] TxAdmin(${TxAdmin}) with Database/PHPMyAdmin(${PHPMyAdmin})
+    echo -e  [2] Only TxAdmin.${TxAdmin}
     read -r choice
     case $choice in
         1 ) txoption=1
@@ -48,7 +50,8 @@ tx_options(){
 
 
 txadmin() { 
-
+  echo -e ${green}https://github.com/rico-dev/tx-admin-installer
+ 
   sleep 15
 
   cd /home/
@@ -64,10 +67,10 @@ txadmin() {
 }
 
 
-if [[ $EUID -ne 0 ]]; then
-   echo "This script must be run as root" 1>&2
-   exit 1
-fi
+ if [ "$EUID" -ne 0 ]; then
+        echo "Please run as root."
+        exit 3
+    fi
 
 tx_options
 
