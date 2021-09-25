@@ -35,8 +35,10 @@ tx_options(){
     read -r choice
     case $choice in
         1 ) txoption=1
+
             ;;
         2 ) txoption=2
+        
             ;;   
         * ) 
             tx_options
