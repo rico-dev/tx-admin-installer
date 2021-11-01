@@ -15,7 +15,7 @@
 
 #!/bin/bash
 
-TxAdmin=v4.6.1
+TxAdmin=v4.7.0
 PHPMyAdmin=v5.1.1
 
 
@@ -58,7 +58,7 @@ txadmin() {
 
   cd /home/
 
-  wget https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/4735-5887c1fa24e25f6c49abc5a0b502346a23a4c119/fx.tar.xz
+  wget https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/4836-a619c5e5293dee08fc3210d9026c1b2350ed0d23/fx.tar.xz
   
   tar -Jxvf fx.tar.xz
 
