@@ -15,7 +15,7 @@
 
 #!/bin/bash
 
-TxAdmin=v4.5.0
+TxAdmin=v4.7.0
 PHPMyAdmin=v5.1.1
 
 
@@ -30,7 +30,7 @@ datenbank() {
 
 tx_options(){
     
-    echo -e This Script made by Rico M. (https://github.com/rico-dev) PHPMyAdmin install script by Julian G. (https://github.com/GermanJag)
+    echo -e This Script made by Rico M. https://github.com/rico-dev PHPMyAdmin install script by Julian G. https://github.com/GermanJag
     echo -e  Please select your option:
     echo -e  [1] TxAdmin ${TxAdmin} with Database/PHPMyAdmin ${PHPMyAdmin} 
     echo -e  [2] Only TxAdmin. ${TxAdmin}
@@ -63,7 +63,9 @@ txadmin() {
 	newstring=$( echo $string | cut -c113- )
 
   wget https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/$newstring
-  
+
+  wget https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/4836-a619c5e5293dee08fc3210d9026c1b2350ed0d23/fx.tar.xz
+
   tar -Jxvf fx.tar.xz
 
   clear
