@@ -64,8 +64,6 @@ txadmin() {
 
   wget https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/$newstring
 
-  wget https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/4836-a619c5e5293dee08fc3210d9026c1b2350ed0d23/fx.tar.xz
-
   tar -Jxvf fx.tar.xz
 
   clear
